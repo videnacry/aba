@@ -1,0 +1,8 @@
+.alert-success {
+    background-color: rgb(204, 255, 174);
+    border-color: #99ff80;
+}
+.alert-warning {
+    background-color: #ffecb0;
+    border-color: #ffe18a;
+}

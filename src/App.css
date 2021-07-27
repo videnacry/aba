@@ -1,0 +1,53 @@
+.mw-1000-px {
+    max-width: 1000px !important;
+}
+.mw-600-px {
+    max-width: 600px !important;
+}
+.pt-65-percent {
+    padding-top: 65%;
+}
+.font-family-sans-serif {
+    font-family: sans-serif;
+}
+.font-size-1dot1-em {
+    font-size: 1.1em;
+}
+.font-size-0dot8-em {
+    font-size: 0.8em;
+}
+
+
+
+@media screen and (max-width: 575.98px) {
+}
+@media screen and (max-width: 767.98px) {
+    .shadow-sm-remove {
+        box-shadow: none !important;
+    }
+}
+@media screen and (max-width: 991.98px) {
+}
+@media screen and (max-width: 1199.98px) {
+}
+@media screen and (max-width: 1399.98px) {
+}
+
+
+
+@media (min-width: 576px) {  }
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) { 
+    .h-md-390-px {
+        height: 390px !important;
+    }
+    .p-md-unset {
+        padding: unset;
+    } 
+}
+
+@media (min-width: 1200px) {  }
+
+@media (min-width: 1400px) {  }
