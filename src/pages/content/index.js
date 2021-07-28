@@ -10,7 +10,8 @@ const Content = () => {
         dataPage.forEach(data => {
             if (data.topic_id == topicId) setPage(() => data)
         })
-    }, [])
+    }, [topicId])
+    
     useEffect(() => {
         mainElmt.current.innerHTML = page ? page.elements.map(element => parseContent(element)).join('') : 'no content'
     }, [page])

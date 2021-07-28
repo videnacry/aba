@@ -29,7 +29,7 @@ const Nav = () => {
                             <a className="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li className="nav-item">
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contents-modal">
                                 <ListButton fill="white" height="15px" width="15px"/>
                                 <span className="mx-2">Contenidos</span>
                             </button>
