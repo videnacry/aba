@@ -1,10 +1,33 @@
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 import {ReactComponent as PantherSvg} from './panther.svg'
+import { ReactComponent as ChevronRightSvg } from './chevron-right.svg'
 import {Link} from 'react-router-dom'
-import contents from './dataModules'
-import { useEffect } from 'react'
+import data from './dataModules'
+import { useEffect, useState } from 'react'
+const getTopicsWithSubtopicsByIds = (topics, ids) => {
+    const res = []
+    topics.forEach(elmt => {
+        const {...topic} = elmt
+        if (ids.indexOf(elmt.id) === -1) {}
+        else if (elmt.subtopicIds){
+            topic.subtopics = getTopicsWithSubtopicsByIds(topics, elmt.subtopicIds)
+            res.push(topic)
+        }
+        else res.push(topic)
+    })
+    return res
+}
+const topics = []
+data.forEach(topic => {
+    const {...newTopic} = topic
+    if (topic.isModule) {
+        newTopic.subtopics = getTopicsWithSubtopicsByIds(data, topic.subtopicIds)
+        topics.push(newTopic)
+    }
+})
 const Contents = () => {
     let bootstrapModalInstance = null
+    const [contents, setContents] = useState(topics)
     useEffect(() => {
         let myModalEl = document.getElementById('contents-modal')
         bootstrapModalInstance = bootstrap.Modal.getInstance(myModalEl)
@@ -19,9 +42,7 @@ const Contents = () => {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body text-center">
-                {contents.map((content, idx) => {
-                    if (!content.isModule) return ''
-                    return (
+                {contents.map((content, idx) => (
                     <div className="w-100 overflow-auto mb-3" key={content.name + content.idx + idx}>
                         <div className="alert alert-info d-flex flex-wrap mb-0" role="alert" style={{width: ((content.subtopicIds.length + 2) * 260) + 'px'}}>
                             <div className="card bg-light text-dark me-4" style={{width: '250px'}}>
@@ -31,24 +52,27 @@ const Contents = () => {
                                     <PantherSvg width="40px" height="40px" className="m-1 position-absolute bottom-0 end-0"/>
                                 </div>
                             </div>
-                            {contents.map((subtopic, idx) => {
-                                if (content.subtopicIds.indexOf(subtopic.id) === -1) return ""
-                                return (
+                            {content.subtopics.map((subtopic, idx) => (
                                 <div className="card text-dark bg-light mx-4" key={subtopic.name + idx + subtopic.id} style={{width: "250px"}}>
                                     <div className="card-body">
-                                        <Link to={`/contents/${subtopic.id}`} className="card-link" onClick={hideModal}>{subtopic.name}</Link>
+                                        {subtopic.subtopics ? (
+                                            <button className="btn text-primary" onClick={() => setContents(() => [subtopic])}>
+                                                {subtopic.name}
+                                                <ChevronRightSvg width="40px" height="40px" className="m-1 position-absolute bottom-0 start-100 translate-middle"/>
+                                            </button>
+                                        ) : (
+                                            <Link to={`/contents/${subtopic.id}`} className="card-link" onClick={hideModal}>{subtopic.name}</Link>
+                                        )}
                                     </div>
                                 </div>
-                                )
-                            })}
+                            ))}
                         </div>
                     </div>
-                    )
-                })}
+                ))}
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
+                <button type="button" className="btn btn-primary" onClick={() => setContents(() => topics)}>Reset</button>
             </div>
             </div>
         </div>
