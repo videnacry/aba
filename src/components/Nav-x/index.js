@@ -1,18 +1,12 @@
 import { NavLink, Link } from 'react-router-dom'
+import Searcher from './searcher'
 import { ReactComponent as ListButton } from './list-button.svg'
-import { ReactComponent as SearchIcon } from './search.svg'
 import abaLogoSrc from './aba-logo.png'
 import Contents from './contents'
 const Nav = () => {
     return(
         <nav className="navbar navbar-expand-sm align-items-center flex-wrap navbar-light">
-            <div className="form-floating mb-3 col-12">
-                <input type="email" className="form-control border-top-0 border-start-0 border-end-0 bg-light" id="floatingInput" placeholder="name@example.com"/>
-                <label htmlFor="floatingInput" className="text-secondary">
-                    <SearchIcon width="25px" height="25px" fill="gray"/>
-                    <span className="mx-3">B&uacute;squeda</span>
-                </label>
-            </div>
+            <Searcher />
             <div className="container-fluid col-12">
                 <Link to="/home" className="navbar-brand" samesite="strict">
                     <img 
