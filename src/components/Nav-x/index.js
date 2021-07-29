@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { ReactComponent as ListButton } from './list-button.svg'
 import { ReactComponent as SearchIcon } from './search.svg'
 import abaLogoSrc from './aba-logo.png'
@@ -14,14 +14,14 @@ const Nav = () => {
                 </label>
             </div>
             <div className="container-fluid col-12">
-                <a className="navbar-brand" href="#" samesite="strict">
+                <Link to="/home" className="navbar-brand" samesite="strict">
                     <img 
                         src={abaLogoSrc}
                         alt=""
                         height="30px"
                         className="d-inline-block align-text-top"
                     />
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

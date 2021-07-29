@@ -3,7 +3,7 @@ import {ReactComponent as PantherSvg} from './panther.svg'
 import { ReactComponent as ChevronRightSvg } from './chevron-right.svg'
 import {Link} from 'react-router-dom'
 import data from './dataModules'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 const getTopicsWithSubtopicsByIds = (topics, ids) => {
     const res = []
     topics.forEach(elmt => {
@@ -26,13 +26,12 @@ data.forEach(topic => {
     }
 })
 const Contents = () => {
-    let bootstrapModalInstance = null
     const [contents, setContents] = useState(topics)
-    useEffect(() => {
-        let myModalEl = document.getElementById('contents-modal')
-        bootstrapModalInstance = bootstrap.Modal.getInstance(myModalEl)
-    })
-    const hideModal = () => bootstrapModalInstance.hide()
+    const hideModal = () => {
+        const myModalEl = document.getElementById('contents-modal')
+        const bootstrapModalInstance = bootstrap.Modal.getInstance(myModalEl)
+        bootstrapModalInstance.hide()
+    }
     return(
         <div className="modal fade" id="contents-modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-xl modal-fullscreen-lg-down">

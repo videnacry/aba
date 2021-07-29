@@ -8,7 +8,7 @@ const Main = () => {
                 <source srcSet={MainImgSrc_2_1} media="(min-aspect-ratio: 16/11)"/>
                 <source srcSet={MainImgSrc_1_1} media="(min-aspect-ratio: 8/11)"/>
                 <source srcSet={MainImgSrc_1_2} />
-                <img src="" width="100%"/>
+                <img src="" width="100%" alt="chica estudiando de forma confortable"/>
             </picture>
             <div className="w-100 h-100 position-absolute top-0 start-0" style={{backgroundImage: "linear-gradient(90deg, transparent 30%, #80008096)"}}></div>
             <div className="col-12 col-md-6 p-3 position-absolute top-50 end-0 translate-middle-y text-light">
