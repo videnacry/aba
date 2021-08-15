@@ -27,7 +27,7 @@ const Nav = () => {
                         <li className="nav-item">
                             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contents-modal">
                                 <ListButton fill="white" height="15px" width="15px"/>
-                                <span className="mx-2">Contenidos</span>
+                                <span className="mx-2">ABA documentos paso a paso</span>
                             </button>
                             <Contents/>
                         </li>

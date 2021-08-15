@@ -11,14 +11,15 @@ const Main = () => {
                 <img src="" width="100%" alt="chica estudiando de forma confortable"/>
             </picture>
             <div className="w-100 h-100 position-absolute top-0 start-0" style={{backgroundImage: "linear-gradient(90deg, transparent 30%, #80008096)"}}></div>
-            <div className="col-12 col-md-6 p-3 position-absolute top-50 end-0 translate-middle-y text-light">
-                <h1 className="text-primary" style={{textShadow: '1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white'}}>ABA Estudios</h1>
+            <div className="col-12 p-3 position-absolute top-0 start-0 text-dark" style={{backgroundColor: 'white'}}>
+                <h1 className="text-primary">ABA Aprendizaje</h1>
                 <hr/>
                 <p className="lead">Fuente de gu&iacute;as para un manejo correcto y elegante de de MS Dynamics 365</p>
-                <div className="list-group list-group-horizontal m-auto text-center">
-                    <a className="list-group-item list-group-item-action list-group-item-info">Finanzas</a>
-                    <a className="list-group-item list-group-item-action list-group-item-info">Ventas</a>
-                    <a className="list-group-item list-group-item-action list-group-item-info">Operaciones</a>
+                <div className="list-group list-group-horizontal m-auto flex-wrap text-center">
+                    <a className="list-group-item list-group-item-warning col-6 col-sm-3">Finanzas</a>
+                    <a className="list-group-item list-group-item-warning col-6 col-sm-3">Logística</a>
+                    <a className="list-group-item list-group-item-warning col-6 col-sm-3">Manufactura</a>
+                    <a className="list-group-item list-group-item-warning col-6 col-sm-3">Administración de Sistemas</a>
                 </div>
             </div>
         </main>
