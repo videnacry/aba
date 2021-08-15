@@ -14,7 +14,7 @@ const Main = () => {
             <div className="col-12 p-3 position-absolute top-0 start-0 text-dark" style={{backgroundColor: 'white'}}>
                 <h1 className="text-primary">ABA Aprendizaje</h1>
                 <hr/>
-                <p className="lead">Fuente de gu&iacute;as para un manejo correcto y elegante de de MS Dynamics 365</p>
+                <p className="lead">Fuente de gu&iacute;as para un manejo correcto y elegante del ERP AX Dynamics 365 Finance and Operations</p>
                 <div className="list-group list-group-horizontal m-auto flex-wrap text-center">
                     <a className="list-group-item list-group-item-warning col-6 col-sm-3">Finanzas</a>
                     <a className="list-group-item list-group-item-warning col-6 col-sm-3">Logística</a>
